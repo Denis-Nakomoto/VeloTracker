@@ -13,8 +13,8 @@ class LogContentView: UIView, UIContentView {
     let coloriesLbl = UILabel(text: "Colories:", font: .systemFont(ofSize: 18, weight: .regular), color: .systemGray)
     let speedLbl = UILabel(text: "Avg speed:", font: .systemFont(ofSize: 18, weight: .regular), color: .systemGray)
     let timeLbl = UILabel(text: "Time:", font: .systemFont(ofSize: 18, weight: .regular), color: .systemGray)
-    let distanceLabel = UILabel(text: "DST", font: .systemFont(ofSize: 18, weight: .medium), color: #colorLiteral(red: 0.1960784314, green: 0.5882352941, blue: 0.8392156863, alpha: 1))
-    let dateLabel = UILabel(text: "DTE", font: .systemFont(ofSize: 20, weight: .medium), color: #colorLiteral(red: 0.1960784314, green: 0.5882352941, blue: 0.8392156863, alpha: 1))
+    let distanceLabel = UILabel(text: "DST", font: .systemFont(ofSize: 18, weight: .regular), color: #colorLiteral(red: 0.1960784314, green: 0.5882352941, blue: 0.8392156863, alpha: 1))
+    let dateLabel = UILabel(text: "DTE", font: .systemFont(ofSize: 20, weight: .regular), color: #colorLiteral(red: 0.1960784314, green: 0.5882352941, blue: 0.8392156863, alpha: 1))
     
     let pathPassedSnapShot: UIImageView = {
         let image = UIImageView(image: UIImage(systemName: "map"))

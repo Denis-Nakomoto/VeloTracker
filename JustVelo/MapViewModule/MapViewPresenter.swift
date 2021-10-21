@@ -64,7 +64,7 @@ class MapViewPresenter: MapViewPresenterProtocol {
         }
     }
     
-    func saveButtonTaped() {
+    func saveButtonTaped(tripPathCoordinates: [CLLocationCoordinate2D]?) {
         let group = DispatchGroup()
         group.enter()
         var pathPassedData: Data?
@@ -72,9 +72,9 @@ class MapViewPresenter: MapViewPresenterProtocol {
         let dateOfTraining = timeAndDateOfTheTraining ?? Date()
         let snapShotRegion = setRegionForSnapshot()
         
-        snapShotter.takeSnapshot(view: view!, region: snapShotRegion) { result in
+        snapShotter.takeSnapshot(view: view!, region: snapShotRegion, tripPathCoordinates: tripPathCoordinates) { result in
             defer { group.leave() }
-            pathPassedData = result.image?.pngData()
+            pathPassedData = result.pngData()
         }
         
         prepareMapForNextTraining()

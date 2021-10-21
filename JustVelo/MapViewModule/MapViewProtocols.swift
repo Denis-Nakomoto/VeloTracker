@@ -39,6 +39,6 @@ protocol MapViewPresenterProtocol: AnyObject {
     func drawPathPassed(tripPathCoordinates: [CLLocationCoordinate2D])
     func setDistanceLabel(locationsPassed: [CLLocationCoordinate2D])
     func startStopButtonTaped(type: String)
-    func saveButtonTaped()
+    func saveButtonTaped(tripPathCoordinates: [CLLocationCoordinate2D]?)
     func doNotSaveButtonTaped()
 }

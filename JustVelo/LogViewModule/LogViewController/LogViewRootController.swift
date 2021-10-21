@@ -131,11 +131,11 @@ extension LogViewController: LogViewProtocol {
         
         presenter?.reversedSorting.toggle()
         
-        let alert = UIAlertController(title: "Please select sorting option", message: "", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "", message: "Sorting", preferredStyle: .actionSheet)
         
-        let titleAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue", size: 20)]
-        let titleString = NSAttributedString(string: "Please select sorting option", attributes: titleAttributes as [NSAttributedString.Key : Any])
-        alert.setValue(titleString, forKey: "attributedTitle")
+        let messageAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue", size: 18)]
+        let messageString = NSAttributedString(string: "Sorting", attributes: messageAttributes as [NSAttributedString.Key : Any])
+        alert.setValue(messageString, forKey: "attributedMessage")
         
         alert.addAction(UIAlertAction(title: "Date", style: .default , handler:{ (UIAlertAction)in
             self.presenter.sortTrainings(by: .date)
@@ -156,6 +156,5 @@ extension LogViewController: LogViewProtocol {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
 
         self.present(alert, animated: true, completion: nil)
-        
     }
 }

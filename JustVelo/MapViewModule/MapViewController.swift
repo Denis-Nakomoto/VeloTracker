@@ -161,7 +161,7 @@ extension MapViewController: MapViewProtocol {
     }
     
     @objc func saveButtonTaped() {
-        presenter.saveButtonTaped()
+        presenter.saveButtonTaped(tripPathCoordinates: tripPathCoordinates)
     }
     
     @objc func doNotSaveButtonTaped() {

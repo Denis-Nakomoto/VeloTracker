@@ -32,7 +32,12 @@ class LogPresenter: LogViewPresenterProtocol {
         case .calories:
             print("Sort by calories")
         case .distance:
-            var sortedData = trainings.sorted(by: { $0.distance! < $1.distance! })
+                var sortedData = trainings.sorted(by: {
+                    guard let dst1 = Int.parse(from: $0.distance!) else { return false }
+                    guard let dst2 = Int.parse(from: $1.distance!) else { return false }
+                    return dst1 < dst2
+                    
+                })
             if reversedSorting {
                 sortedData = trainings.sorted(by: { $0.distance! > $1.distance! })
             }

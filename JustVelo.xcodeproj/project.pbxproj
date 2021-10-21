@@ -25,6 +25,7 @@
 		92682DFE271FFCB700F265DE /* LogViewContentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92682DFD271FFCB700F265DE /* LogViewContentConfiguration.swift */; };
 		92682E01271FFD4100F265DE /* LogContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92682E00271FFD4100F265DE /* LogContentView.swift */; };
 		92682E03271FFD8200F265DE /* LogModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92682E02271FFD8200F265DE /* LogModuleProtocols.swift */; };
+		92682E052721978A00F265DE /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92682E042721978900F265DE /* Int+Extension.swift */; };
 		9269E6022713102C005BED9E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9269E6012713102C005BED9E /* Model.swift */; };
 		9271AD672702845A00A606BD /* MapViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9271AD662702845A00A606BD /* MapViewProtocols.swift */; };
 		9271AD6927028FF500A606BD /* PinAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9271AD6827028FF500A606BD /* PinAnnotationView.swift */; };
@@ -65,6 +66,7 @@
 		92682DFD271FFCB700F265DE /* LogViewContentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewContentConfiguration.swift; sourceTree = "<group>"; };
 		92682E00271FFD4100F265DE /* LogContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogContentView.swift; sourceTree = "<group>"; };
 		92682E02271FFD8200F265DE /* LogModuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogModuleProtocols.swift; sourceTree = "<group>"; };
+		92682E042721978900F265DE /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		9269E6012713102C005BED9E /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		9271AD662702845A00A606BD /* MapViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewProtocols.swift; sourceTree = "<group>"; };
 		9271AD6827028FF500A606BD /* PinAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinAnnotationView.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				92BA2ABE27057B1900EA67BE /* UIButton+Extension.swift */,
 				92682DFB271FAF3C00F265DE /* Date+Extension.swift */,
 				92BA2AC4270705B300EA67BE /* UICollectionViewCell+Extension.swift */,
+				92682E042721978900F265DE /* Int+Extension.swift */,
 				9257137C26FAD05D009BCDF7 /* UILabel+extension.swift */,
 				92BA2ABC270538C000EA67BE /* Double+extension.swift */,
 				9257138D26FC4C30009BCDF7 /* UIViewController+extension.swift */,
@@ -322,6 +325,7 @@
 				9269E6022713102C005BED9E /* Model.swift in Sources */,
 				9264C28A270EA7D700A61FE3 /* MaintanancePresenter.swift in Sources */,
 				92AFEBD026F99818007FB047 /* SceneDelegate.swift in Sources */,
+				92682E052721978A00F265DE /* Int+Extension.swift in Sources */,
 				9257138E26FC4C30009BCDF7 /* UIViewController+extension.swift in Sources */,
 				92BA2AC12706B70600EA67BE /* CoreDataObserver.swift in Sources */,
 				9271AD6927028FF500A606BD /* PinAnnotationView.swift in Sources */,

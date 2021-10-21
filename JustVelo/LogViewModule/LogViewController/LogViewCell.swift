@@ -18,10 +18,8 @@ class LogViewCell: UICollectionViewListCell {
         newConfiguration.distance = training?.distance
         newConfiguration.date = training?.date
         newConfiguration.pathPassed = training?.pathPassed
-        
-        // Set content configuration in order to update custom content view
+
         contentConfiguration = newConfiguration
-        
     }
     
 }
