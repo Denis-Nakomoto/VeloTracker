@@ -38,7 +38,7 @@ class TabNavigationMenu: UIView {
         }
         self.setNeedsLayout()
         self.layoutIfNeeded()
-        self.activateTab(tab: 0) // activate the first tab
+        self.activateTab(tab: 0)
     }
     
     // Create a custom nav menu item
@@ -61,16 +61,16 @@ class TabNavigationMenu: UIView {
         tabBarItem.translatesAutoresizingMaskIntoConstraints = false
         tabBarItem.clipsToBounds = true
         NSLayoutConstraint.activate([
-            itemIconView.heightAnchor.constraint(equalToConstant: 25), // Fixed height for our tab item(25pts)
-            itemIconView.widthAnchor.constraint(equalToConstant: 25), // Fixed width for our tab item icon
+            itemIconView.heightAnchor.constraint(equalToConstant: 25),
+            itemIconView.widthAnchor.constraint(equalToConstant: 25),
             itemIconView.centerXAnchor.constraint(equalTo: tabBarItem.centerXAnchor),
-            itemIconView.topAnchor.constraint(equalTo: tabBarItem.topAnchor, constant: 8), // Position menu item icon 8pts from the top of it's parent view
+            itemIconView.topAnchor.constraint(equalTo: tabBarItem.topAnchor, constant: 8),
             itemIconView.leadingAnchor.constraint(equalTo: tabBarItem.leadingAnchor, constant: 35),
-            itemTitleLabel.heightAnchor.constraint(equalToConstant: 20), // Fixed height for title label
-            itemTitleLabel.widthAnchor.constraint(equalTo: tabBarItem.widthAnchor), // Position label full width across tab bar item
-            itemTitleLabel.topAnchor.constraint(equalTo: itemIconView.bottomAnchor, constant: 4), // Position title label 4pts below item icon
+            itemTitleLabel.heightAnchor.constraint(equalToConstant: 20),
+            itemTitleLabel.widthAnchor.constraint(equalTo: tabBarItem.widthAnchor),
+            itemTitleLabel.topAnchor.constraint(equalTo: itemIconView.bottomAnchor, constant: 4)
         ])
-        tabBarItem.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleTap))) // Each item should be able to trigger and action on tap
+        tabBarItem.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleTap)))
         return tabBarItem
     }
     
@@ -96,6 +96,8 @@ class TabNavigationMenu: UIView {
                 tabToActivate.setNeedsLayout()
                 tabToActivate.layoutIfNeeded()
             })
+            let iconToAnimate = tabToActivate.subviews[0] as! UIImageView
+            self.animateOnTap(imageView: iconToAnimate)
             self.itemTapped?(tab)
         }
         self.activeItem = tab
@@ -110,6 +112,21 @@ class TabNavigationMenu: UIView {
                 inactiveTab.setNeedsLayout()
                 inactiveTab.layoutIfNeeded()
             })
+        }
+    }
+    
+    // Animates tab icon tap
+    func animateOnTap(imageView: UIImageView) {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+
+            imageView.transform = CGAffineTransform.init(scaleX: 1.4, y: 1.4)
+
+            //reducing the size
+            UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+                imageView.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+            }) { (flag) in
+            }
+        }) { (flag) in
         }
     }
 }

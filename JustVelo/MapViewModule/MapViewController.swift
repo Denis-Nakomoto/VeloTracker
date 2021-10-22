@@ -33,13 +33,10 @@ class MapViewController: UIViewController {
     let saveTraining = UIButton(title: "Save")
     let doNotsaveTraining = UIButton(title: "Not now")
     
-//    var snapView: UIView = {
-//        let view = UIView(frame: CGRect(x: 0, y: 0, width: 150, height: 250))
-//        return view
-//    }()
-    
     var distanceLabel = UILabel(text: "0m", font: .boldSystemFont(ofSize: 26), color: .red)
     var speedLabel = UILabel(text: "0km/h", font: .boldSystemFont(ofSize: 26), color: .green)
+    var timer = UILabel(text: "0s", font: .boldSystemFont(ofSize: 26), color: .cyan)
+    var seconds: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +74,7 @@ class MapViewController: UIViewController {
         speedLabel.translatesAutoresizingMaskIntoConstraints = false
         saveTraining.translatesAutoresizingMaskIntoConstraints = false
         doNotsaveTraining.translatesAutoresizingMaskIntoConstraints = false
-//        snapView.translatesAutoresizingMaskIntoConstraints = false
+        timer.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(mapView)
         view.addSubview(startButton)
@@ -86,20 +83,21 @@ class MapViewController: UIViewController {
         view.addSubview(speedLabel)
         view.addSubview(saveTraining)
         view.addSubview(doNotsaveTraining)
-//        view.addSubview(snapView)
+        view.addSubview(timer)
+
         distanceLabel.layer.opacity = 0.7
         distanceLabel.isHidden = true
         speedLabel.layer.opacity = 0.7
         speedLabel.isHidden = true
+        timer.layer.opacity = 0.7
+        timer.isHidden = true
         
         view.bringSubviewToFront(startButton)
         view.bringSubviewToFront(stopButton)
         view.bringSubviewToFront(stopButton)
         view.bringSubviewToFront(saveTraining)
         view.bringSubviewToFront(doNotsaveTraining)
-//        view.bringSubviewToFront(snapView)
-        
-        
+
         NSLayoutConstraint.activate([
             mapView.topAnchor.constraint(equalTo: view.topAnchor),
             mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -138,8 +136,12 @@ class MapViewController: UIViewController {
             speedLabel.topAnchor.constraint(equalTo: distanceLabel.bottomAnchor, constant: 8),
             speedLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50)
         ])
+        
+        NSLayoutConstraint.activate([
+            timer.topAnchor.constraint(equalTo: speedLabel.bottomAnchor, constant: 8),
+            timer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50)
+        ])
     }
-
 }
 
 extension MapViewController: MapViewProtocol {
@@ -166,6 +168,12 @@ extension MapViewController: MapViewProtocol {
     
     @objc func doNotSaveButtonTaped() {
         presenter.doNotSaveButtonTaped()
+    }
+    
+    func updateTimerLabel() {
+        seconds += 1
+        print(seconds)
+        timer.text = seconds.intToSMH()
     }
     
 //    func setupUserTrackingButtonAndScaleView() {

@@ -15,6 +15,9 @@ class MapViewPresenter: MapViewPresenterProtocol {
     var snapShotter: SnapShotter
     var newTraining: Training?
     var timeAndDateOfTheTraining: Date?
+    var timeIntervalSinceTrainingStarted: String?
+    var timer: Timer?
+
 
     required init(view: MapViewProtocol, locationManager: LocationManager, snapShotter: SnapShotter, storageManager: StorageManager) {
         self.view = view
@@ -52,15 +55,20 @@ class MapViewPresenter: MapViewPresenterProtocol {
         if type == "start" {
             view?.distanceLabel.isHidden.toggle()
             view?.speedLabel.isHidden.toggle()
+            view?.timer.isHidden.toggle()
             timeAndDateOfTheTraining = Date()
             view?.startButton.isHidden.toggle()
             view?.stopButton.isHidden.toggle()
+            runTimer()
         } else {
             view?.stopButton.isHidden.toggle()
             view?.saveTraining.isHidden.toggle()
             view?.doNotsaveTraining.isHidden.toggle()
             view?.speedLabel.text = "0km/h"
             setRegionForSnapshot()
+            timer?.invalidate()
+            view?.seconds = 0
+            view?.timer.text = "0s"
         }
     }
     
@@ -79,6 +87,7 @@ class MapViewPresenter: MapViewPresenterProtocol {
         
         prepareMapForNextTraining()
         
+        // TODO: Remove clousue from add training
         group.notify(queue: .global(qos: .utility)) {
             self.storageManager.addNewTraining(date: dateOfTraining,
                                           pathPassed: pathPassedData,
@@ -94,6 +103,7 @@ class MapViewPresenter: MapViewPresenterProtocol {
     func prepareMapForNextTraining() {
         view?.distanceLabel.isHidden.toggle()
         view?.speedLabel.isHidden.toggle()
+        view?.timer.isHidden.toggle()
         view?.saveTraining.isHidden.toggle()
         view?.startButton.isHidden.toggle()
         view?.doNotsaveTraining.isHidden.toggle()
@@ -124,5 +134,15 @@ class MapViewPresenter: MapViewPresenterProtocol {
         view?.mapView.setRegion(region, animated: true)
         return region
     }
+
+    func runTimer() {
+         timer = Timer.scheduledTimer(timeInterval: 1, target: self,
+                                      selector: (#selector(updateTimerLabel)),
+                                      userInfo: nil, repeats: true)
+        print("Timer started")
+    }
     
+    @objc func updateTimerLabel() {
+        view?.updateTimerLabel()
+    }
 }

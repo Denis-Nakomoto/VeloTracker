@@ -10,7 +10,6 @@
 		9257137B26FACD53009BCDF7 /* MapViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9257137A26FACD53009BCDF7 /* MapViewPresenter.swift */; };
 		9257137D26FAD05D009BCDF7 /* UILabel+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9257137C26FAD05D009BCDF7 /* UILabel+extension.swift */; };
 		9257138226FAD3D8009BCDF7 /* ModulesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9257138126FAD3D8009BCDF7 /* ModulesBuilder.swift */; };
-		9257138426FB5940009BCDF7 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9257138326FB5940009BCDF7 /* NetworkService.swift */; };
 		9257138726FBE8C4009BCDF7 /* LogViewRootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9257138626FBE8C3009BCDF7 /* LogViewRootController.swift */; };
 		9257138926FBE8D4009BCDF7 /* LogPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9257138826FBE8D4009BCDF7 /* LogPresenter.swift */; };
 		9257138C26FC0DB7009BCDF7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9257138B26FC0DB7009BCDF7 /* MapViewController.swift */; };
@@ -26,14 +25,13 @@
 		92682E01271FFD4100F265DE /* LogContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92682E00271FFD4100F265DE /* LogContentView.swift */; };
 		92682E03271FFD8200F265DE /* LogModuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92682E02271FFD8200F265DE /* LogModuleProtocols.swift */; };
 		92682E052721978A00F265DE /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92682E042721978900F265DE /* Int+Extension.swift */; };
-		9269E6022713102C005BED9E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9269E6012713102C005BED9E /* Model.swift */; };
+		926B8F5B272284AD00D2EA4B /* DetailedSnapShotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926B8F5A272284AD00D2EA4B /* DetailedSnapShotView.swift */; };
 		9271AD672702845A00A606BD /* MapViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9271AD662702845A00A606BD /* MapViewProtocols.swift */; };
 		9271AD6927028FF500A606BD /* PinAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9271AD6827028FF500A606BD /* PinAnnotationView.swift */; };
 		9271AD6D2702E28E00A606BD /* SnapShotter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9271AD6C2702E28E00A606BD /* SnapShotter.swift */; };
 		9271AD702702F09900A606BD /* TrainingsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9271AD6E2702F09800A606BD /* TrainingsModel.xcdatamodeld */; };
 		92AFEBCE26F99818007FB047 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AFEBCD26F99818007FB047 /* AppDelegate.swift */; };
 		92AFEBD026F99818007FB047 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AFEBCF26F99818007FB047 /* SceneDelegate.swift */; };
-		92AFEBD226F99818007FB047 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AFEBD126F99818007FB047 /* MainViewController.swift */; };
 		92AFEBD726F9981B007FB047 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92AFEBD626F9981B007FB047 /* Assets.xcassets */; };
 		92AFEBDA26F9981B007FB047 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92AFEBD826F9981B007FB047 /* LaunchScreen.storyboard */; };
 		92BA2ABB2703DF2C00EA67BE /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BA2ABA2703DF2C00EA67BE /* StorageManager.swift */; };
@@ -51,7 +49,6 @@
 		9257137A26FACD53009BCDF7 /* MapViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewPresenter.swift; sourceTree = "<group>"; };
 		9257137C26FAD05D009BCDF7 /* UILabel+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+extension.swift"; sourceTree = "<group>"; };
 		9257138126FAD3D8009BCDF7 /* ModulesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesBuilder.swift; sourceTree = "<group>"; };
-		9257138326FB5940009BCDF7 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		9257138626FBE8C3009BCDF7 /* LogViewRootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewRootController.swift; sourceTree = "<group>"; };
 		9257138826FBE8D4009BCDF7 /* LogPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogPresenter.swift; sourceTree = "<group>"; };
 		9257138B26FC0DB7009BCDF7 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -67,7 +64,7 @@
 		92682E00271FFD4100F265DE /* LogContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogContentView.swift; sourceTree = "<group>"; };
 		92682E02271FFD8200F265DE /* LogModuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogModuleProtocols.swift; sourceTree = "<group>"; };
 		92682E042721978900F265DE /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
-		9269E6012713102C005BED9E /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		926B8F5A272284AD00D2EA4B /* DetailedSnapShotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedSnapShotView.swift; sourceTree = "<group>"; };
 		9271AD662702845A00A606BD /* MapViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewProtocols.swift; sourceTree = "<group>"; };
 		9271AD6827028FF500A606BD /* PinAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinAnnotationView.swift; sourceTree = "<group>"; };
 		9271AD6C2702E28E00A606BD /* SnapShotter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShotter.swift; sourceTree = "<group>"; };
@@ -75,7 +72,6 @@
 		92AFEBCA26F99818007FB047 /* JustVelo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustVelo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AFEBCD26F99818007FB047 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92AFEBCF26F99818007FB047 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		92AFEBD126F99818007FB047 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		92AFEBD626F9981B007FB047 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92AFEBD926F9981B007FB047 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92AFEBDB26F9981B007FB047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -140,7 +136,6 @@
 		9257138526FB594F009BCDF7 /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
-				9257138326FB5940009BCDF7 /* NetworkService.swift */,
 				92BA2ABA2703DF2C00EA67BE /* StorageManager.swift */,
 				9271AD6E2702F09800A606BD /* TrainingsModel.xcdatamodeld */,
 				92BA2AC02706B70600EA67BE /* CoreDataObserver.swift */,
@@ -191,6 +186,7 @@
 				9257138626FBE8C3009BCDF7 /* LogViewRootController.swift */,
 				92BA2AC22707055600EA67BE /* LogViewCell.swift */,
 				92682E00271FFD4100F265DE /* LogContentView.swift */,
+				926B8F5A272284AD00D2EA4B /* DetailedSnapShotView.swift */,
 				92682DFD271FFCB700F265DE /* LogViewContentConfiguration.swift */,
 			);
 			path = LogViewController;
@@ -226,8 +222,6 @@
 				9257138526FB594F009BCDF7 /* ServiceLayer */,
 				9257138026FAD38F009BCDF7 /* App */,
 				9257137F26FAD383009BCDF7 /* Extensions */,
-				92AFEBD126F99818007FB047 /* MainViewController.swift */,
-				9269E6012713102C005BED9E /* Model.swift */,
 				92AFEBD626F9981B007FB047 /* Assets.xcassets */,
 				92AFEBD826F9981B007FB047 /* LaunchScreen.storyboard */,
 				92AFEBDB26F9981B007FB047 /* Info.plist */,
@@ -307,14 +301,12 @@
 				92682DFC271FAF3C00F265DE /* Date+Extension.swift in Sources */,
 				92BA2AC9270844B500EA67BE /* Trainings+CoreDataProperties.swift in Sources */,
 				9257137B26FACD53009BCDF7 /* MapViewPresenter.swift in Sources */,
-				92AFEBD226F99818007FB047 /* MainViewController.swift in Sources */,
 				92BA2AC32707055600EA67BE /* LogViewCell.swift in Sources */,
 				9264C284270E941E00A61FE3 /* TabBarViewController.swift in Sources */,
 				92BA2AC8270844B500EA67BE /* Trainings+CoreDataClass.swift in Sources */,
 				9271AD6D2702E28E00A606BD /* SnapShotter.swift in Sources */,
 				92BA2ABF27057B1900EA67BE /* UIButton+Extension.swift in Sources */,
 				92682E01271FFD4100F265DE /* LogContentView.swift in Sources */,
-				9257138426FB5940009BCDF7 /* NetworkService.swift in Sources */,
 				9257138C26FC0DB7009BCDF7 /* MapViewController.swift in Sources */,
 				9264C282270E8C3C00A61FE3 /* TabNavigationMenu.swift in Sources */,
 				92BA2ABD270538C000EA67BE /* Double+extension.swift in Sources */,
@@ -322,9 +314,9 @@
 				92BA2ABB2703DF2C00EA67BE /* StorageManager.swift in Sources */,
 				9264C28C270EACB400A61FE3 /* SettingsView.swift in Sources */,
 				92AFEBCE26F99818007FB047 /* AppDelegate.swift in Sources */,
-				9269E6022713102C005BED9E /* Model.swift in Sources */,
 				9264C28A270EA7D700A61FE3 /* MaintanancePresenter.swift in Sources */,
 				92AFEBD026F99818007FB047 /* SceneDelegate.swift in Sources */,
+				926B8F5B272284AD00D2EA4B /* DetailedSnapShotView.swift in Sources */,
 				92682E052721978A00F265DE /* Int+Extension.swift in Sources */,
 				9257138E26FC4C30009BCDF7 /* UIViewController+extension.swift in Sources */,
 				92BA2AC12706B70600EA67BE /* CoreDataObserver.swift in Sources */,

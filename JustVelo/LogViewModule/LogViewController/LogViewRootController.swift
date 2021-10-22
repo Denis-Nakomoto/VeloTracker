@@ -24,6 +24,7 @@ class LogViewController: UIViewController {
         setupTrainingsData()
         reloadData(trainings: presenter.storageManager.trainings.value!)
         setupConstraints()
+        collectionView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -156,5 +157,15 @@ extension LogViewController: LogViewProtocol {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
 
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension LogViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = self.dataSource.itemIdentifier(for: indexPath)
+        guard let data = item?.pathPassed else { return }
+        let image = UIImage(data: data)
+        let snapShotVC = DetailedSnapShotView.init(snapShot: image!)
+        self.navigationController?.pushViewController(snapShotVC, animated: true)
     }
 }

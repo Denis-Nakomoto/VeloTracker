@@ -19,6 +19,7 @@ extension Training {
     @NSManaged public var date: Date?
     @NSManaged public var distance: String?
     @NSManaged public var pathPassed: Data?
+    @NSManaged public var time: String?
 
 }
 

@@ -18,12 +18,14 @@ protocol MapViewProtocol: AnyObject {
     var mapView: MKMapView { get set }
     var distanceLabel: UILabel { get set }
     var speedLabel: UILabel { get set }
+    var timer: UILabel { get set }
     var tripStarted: Bool { get set }
+    var seconds: Int { get set }
 //    var snapView: UIView { get set }
 
     func setDistanceLabel(distance: Double)
     func centerViewToUserLocation(center: CLLocationCoordinate2D)
-
+    func updateTimerLabel()
 }
 
 protocol MapViewPresenterProtocol: AnyObject {
