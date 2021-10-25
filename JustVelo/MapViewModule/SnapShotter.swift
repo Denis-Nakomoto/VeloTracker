@@ -16,6 +16,8 @@ class  SnapShotter {
     
     var mySpan: MKCoordinateSpan!
     
+    var strokeColor: UIColor = .systemBlue
+    
     func takeSnapshot(view: MapViewProtocol,
                       region: MKCoordinateRegion,
                       tripPathCoordinates: [CLLocationCoordinate2D]?,
@@ -26,17 +28,7 @@ class  SnapShotter {
         snapShotOptions.size = view.mapView.frame.size
         snapShotOptions.scale = UIScreen.main.scale
         snapShot = MKMapSnapshotter(options: snapShotOptions)
-        
-        //        let mapImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 250))
-        //
-        //        mapImage.contentMode = .scaleAspectFit
-        //        mapImage.backgroundColor = .white
-        //        mapImage.layer.masksToBounds = true
-        //        mapImage.layer.borderWidth = 1.0
-        //        mapImage.layer.borderColor = UIColor.red.cgColor
-        
-        
-        snapShot.start { (snapshot, error) -> Void in
+        snapShot.start { [self] (snapshot, error) -> Void in
             guard let snapshot = snapshot else { return }
             
             let mapImage = snapshot.image
@@ -53,8 +45,8 @@ class  SnapShotter {
                     path.addLine(to: point)
                 }
                 
-                path.lineWidth = 1
-                UIColor.blue.setStroke()
+                path.lineWidth = 4
+                self.strokeColor.setStroke()
                 path.stroke()
             }
             completion(finalImage)

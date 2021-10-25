@@ -33,15 +33,32 @@ class MapViewController: UIViewController {
     let saveTraining = UIButton(title: "Save")
     let doNotsaveTraining = UIButton(title: "Not now")
     
-    var distanceLabel = UILabel(text: "0m", font: .boldSystemFont(ofSize: 26), color: .red)
-    var speedLabel = UILabel(text: "0km/h", font: .boldSystemFont(ofSize: 26), color: .green)
-    var timer = UILabel(text: "0s", font: .boldSystemFont(ofSize: 26), color: .cyan)
+    var distanceLabel = UILabel(text: "0m", font: .boldSystemFont(ofSize: 26), color: .systemRed)
+    var speedLabel = UILabel(text: "0km/h", font: .boldSystemFont(ofSize: 26), color: .systemGreen)
+    var timer = UILabel(text: "0s", font: .boldSystemFont(ofSize: 26), color: .systemBlue)
     var seconds: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupConstraints()
         initializeMapView()
+        setupColorScheme()
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        setupColorScheme()
+    }
+    
+    private func setupColorScheme() {
+        switch traitCollection.userInterfaceStyle {
+        case .light, .unspecified:
+            presenter?.snapShotter.strokeColor = .systemBlue
+        case .dark:
+            presenter?.snapShotter.strokeColor = .systemGreen
+        @unknown default:
+            presenter?.snapShotter.strokeColor = .systemBlue
+        }
     }
     
     // Inintial method who set all the initial functions of the view
