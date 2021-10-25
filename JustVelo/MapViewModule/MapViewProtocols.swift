@@ -21,7 +21,6 @@ protocol MapViewProtocol: AnyObject {
     var timer: UILabel { get set }
     var tripStarted: Bool { get set }
     var seconds: Int { get set }
-//    var snapView: UIView { get set }
 
     func setDistanceLabel(distance: Double)
     func centerViewToUserLocation(center: CLLocationCoordinate2D)

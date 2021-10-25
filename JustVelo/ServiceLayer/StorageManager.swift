@@ -29,12 +29,13 @@ class StorageManager {
         }
     }
     
-    func addNewTraining(date: Date, pathPassed: Data?, distance: String, completion: (Training) -> Void) {
+    func addNewTraining(date: Date, pathPassed: Data?, distance: String, time: String, completion: (Training) -> Void) {
         guard let entityDescription = NSEntityDescription.entity(forEntityName: "Training", in: context) else { return }
         let newTraining = NSManagedObject(entity: entityDescription, insertInto: context) as! Training
         newTraining.distance = distance
         newTraining.date = date
         newTraining.pathPassed = pathPassed
+        newTraining.time = time
 //        newTraining.calories = training.calories
         completion(newTraining)
         

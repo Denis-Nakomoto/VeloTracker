@@ -17,6 +17,7 @@ class LogViewCell: UICollectionViewListCell {
 
         newConfiguration.distance = training?.distance
         newConfiguration.date = training?.date
+        newConfiguration.time = training?.time
         newConfiguration.pathPassed = training?.pathPassed
 
         contentConfiguration = newConfiguration

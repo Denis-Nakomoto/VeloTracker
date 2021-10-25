@@ -67,8 +67,6 @@ class MapViewPresenter: MapViewPresenterProtocol {
             view?.speedLabel.text = "0km/h"
             setRegionForSnapshot()
             timer?.invalidate()
-            view?.seconds = 0
-            view?.timer.text = "0s"
         }
     }
     
@@ -77,6 +75,7 @@ class MapViewPresenter: MapViewPresenterProtocol {
         group.enter()
         var pathPassedData: Data?
         let distancePassed = view?.distanceLabel.text
+        let time = view?.timer.text
         let dateOfTraining = timeAndDateOfTheTraining ?? Date()
         let snapShotRegion = setRegionForSnapshot()
         
@@ -91,7 +90,8 @@ class MapViewPresenter: MapViewPresenterProtocol {
         group.notify(queue: .global(qos: .utility)) {
             self.storageManager.addNewTraining(date: dateOfTraining,
                                           pathPassed: pathPassedData,
-                                          distance: distancePassed ?? "0m") { training in
+                                               distance: distancePassed ?? "0m",
+                                               time: time ?? "0s") { training in
             }
         }
     }
@@ -111,6 +111,8 @@ class MapViewPresenter: MapViewPresenterProtocol {
         view?.mapView.removeAnnotations((view?.mapView.annotations)!)
         view?.mapView.removeOverlays((view?.mapView.overlays)!)
         view?.tripPathCoordinates.removeAll()
+        view?.seconds = 0
+        view?.timer.text = "0s"
     }
     
 // Calculate region that fits all the path passed during the training

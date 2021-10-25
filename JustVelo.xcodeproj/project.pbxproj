@@ -137,8 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				92BA2ABA2703DF2C00EA67BE /* StorageManager.swift */,
-				9271AD6E2702F09800A606BD /* TrainingsModel.xcdatamodeld */,
 				92BA2AC02706B70600EA67BE /* CoreDataObserver.swift */,
+				9271AD6E2702F09800A606BD /* TrainingsModel.xcdatamodeld */,
 			);
 			path = ServiceLayer;
 			sourceTree = "<group>";

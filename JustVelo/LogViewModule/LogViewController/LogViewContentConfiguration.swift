@@ -13,6 +13,7 @@ struct LogViewContentConfiguration: UIContentConfiguration, Hashable {
     var date: Date?
     var pathPassed: Data?
     var nameColor: UIColor?
+    var time: String?
     var contentBackgroundColor: UIColor?
     
     func makeContentView() -> UIView & UIContentView {
